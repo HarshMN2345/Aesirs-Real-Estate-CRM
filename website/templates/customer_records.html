@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="card">
+  <div class="card-header"><strong>
+    	{{ customer_records.first_name }} 
+		{{ customer_records.last_name }}</strong>
+  </div>
+  <div class="card-body">
+
+
+
+<p class="card-text">
+<strong>Email: </strong>{{ customer_records.email }}</p>
+
+<p class="card-text">
+<strong>Phone: </strong>{{ customer_records.phone }}
+</p>
+
+<p class="card-text">
+<strong>Address: </strong>{{ customer_records.address }}</p>
+
+<p class="card-text">
+<strong>City: </strong>{{ customer_records.city }}</p>
+
+<p class="card-text">
+<strong>State: </strong>{{ customer_records.state }}</p>
+
+<p class="card-text">
+<strong>Zipcode: </strong>{{ customer_records.zip }}</p>
+
+<p class="card-text">
+<strong>Create At: </strong>{{ customer_records.created}}</p>
+
+<p class="card-text">
+<strong>ID: </strong>{{ customer_records.id }}</p>
+    
+    
+  </div>
+</div>
+
+<br/><br/>
+{% endblock %}

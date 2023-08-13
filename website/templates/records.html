@@ -1,19 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="col-md-6">
-    <br>
-    <h1>Aesirs CRM</h1>
-    <p class="yuy"> Welcome to the home page!</p>
-    <div style="box-sizing: border-box; padding:100px; border:solid; background-image:url('https://static.vecteezy.com/system/resources/previews/001/335/204/original/hand-drawn-city-skyline-sketch-background-free-vector.jpg'); background-size:cover;">
-        {% if user.is_authenticated %}
-            <h1 style="text-align: center;color:black;">Welcome {{ user.username }}!</h1>
-            <br>
-        {% endif %}
-    </div>
-</div>
-        <h2>Records</h2>
-        {% if user.is_authenticated %}
+{% if user.is_authenticated %}
         {% if records %}
             <table class="table">
                 <thead>
@@ -49,11 +37,9 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <button class="btn btn-outline-success me-2" type="button"  onclick="window.location.href='/records'">See More</button>
         {% else %}
          {% endif %}
          {% else %} 
             <p>No records available.</p>
         {% endif %}
 {% endblock %}
-
