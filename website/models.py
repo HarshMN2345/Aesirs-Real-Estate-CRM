@@ -10,6 +10,7 @@ class Record(models.Model):
     state = models.CharField(max_length=100, blank=True, default='')
     zip = models.CharField(max_length=100, blank=True, default='')
     id=models.AutoField(primary_key=True)
+    image=models.ImageField(upload_to='website/images',blank=True)
    
     def _str_(self):
        return(f'{self.first_name} {self.last_name}')
