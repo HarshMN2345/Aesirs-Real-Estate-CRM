@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <h1>Home</h1>
+    <p> Welcome to the home page!</p>
+    <div style="box-sizing: border-box; padding:100px; border:solid; background-image:url('https://static.vecteezy.com/system/resources/previews/001/335/204/original/hand-drawn-city-skyline-sketch-background-free-vector.jpg'); background-size:cover;">
+        {% if user.is_authenticated %}
+        <h1 style="text-align: center;color:black;">Welcome {{ user.username }}!</h1>
+        {% else %}
+        <h1 style="text-align: center;color:black;">Login</h1>
+        <form class="text" method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="color:rgb(0, 0, 0)">Username</label>
+              <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Username" required>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Your Password" required>
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+            <br>
+            <p style="background:transparent; padding-top:30px ; color:black; font-weight:bolder">Don't have an account? <a href='/register'>Register</a></p>
+            <!-- {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %} -->
+          </form>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
