@@ -3,8 +3,8 @@
 {% block content %}
 <div class="col-md-6">
     <br>
-    <h1>Aesirs CRM</h1>
-    <p class="yuy"> Welcome to the home page!</p>
+    <h1>Welcome to Aesirs Real Estate CRM</h1>
+    <p class="yuy">Your All-in-One Solution for Streamlining Real Estate Operations</p>
     <div style="box-sizing: border-box; padding:100px; border:solid; background-image:url('https://static.vecteezy.com/system/resources/previews/001/335/204/original/hand-drawn-city-skyline-sketch-background-free-vector.jpg'); background-size:cover;">
         {% if user.is_authenticated %}
             <h1 style="text-align: center;color:black;">Welcome {{ user.username }}!</h1>
@@ -32,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for record in records %}
+                    {% for record in records|slice:":10" %}
                     <tr>
                         <th scope="row">{{ forloop.counter }}</th>
                         <td>{{ record.first_name }}</td>
@@ -44,12 +44,18 @@
                         <td>{{ record.state }}</td>
                         <td>{{ record.zip }}</td>
                         <td>{{ record.created }}</td>
-                        <td>{{ record.id }}</td>
+                        <td><a href="/records/{{record.id}}">{{ record.id }}</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
             <button class="btn btn-outline-success me-2" type="button"  onclick="window.location.href='/records'">See More</button>
+            <br>
+            <div class="div123">
+            <footer class="footer4">
+                <p>&copy; 2023 Harsh Mahajan. All rights reserved.</p>
+            </footer>
+        </div>
         {% else %}
          {% endif %}
          {% else %} 
