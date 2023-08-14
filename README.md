@@ -5,7 +5,7 @@ Aesirs Real Estate CRM is a web-based Customer Relationship Management (CRM) for
 
 ## Features
 
-Keep records clients in a centralized system.
+Keep records of clients in a centralized system.
 
 ## Technologies Used
 
