@@ -1,7 +1,7 @@
 
 # Aesirs Real Estate CRM
 
-Aesirs Real Estate CRM is a web-based Customer Relationship Management (CRM) application developed using Django and Bootstrap 5
+Aesirs Real Estate CRM is a web-based Customer Relationship Management (CRM) for aesirs housing(a fictional real estate company) application developed using Django and Bootstrap 5
 
 ## Features
 
